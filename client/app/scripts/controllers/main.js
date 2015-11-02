@@ -42,10 +42,10 @@ angular.module('friendsFeedApp')
         // load posts from friends and from myself
         $scope.getPosts();
 
-        // poll server for new updates every 5 seconds
+        // poll server for new updates every second
         (function tick() {
             $scope.getPosts();
-            $timeout(tick, 5 * 1000);
+            $timeout(tick, 1 * 1000);
         })();
 
         $scope.resetPost = function() {
