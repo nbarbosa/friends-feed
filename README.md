@@ -16,7 +16,7 @@ Run `npm install`.
 
 ### Client side
 
-Make sure to properly set the constants that will point to the server side app in app.js:
+Make sure to properly set the constants that will point to the server side app in `app.js`:
 
 * AppConfig.api_url
 * AppConfig.image_server_url
@@ -25,7 +25,7 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ### Server side
 
-Make sure to properly set the MongoDB connection URI `MONGO_URI` as an environment variable.
+Make sure to properly set the MongoDB connection URI `MONGO_URI` as an environment variable. The dotenv plug-in allowes settings this through the `.env` file.
 
 Make sure to run the seed script `seed.js` by running `node seed.js`. This will create 3 users with the following relationships:
 
@@ -42,7 +42,7 @@ If environment variable `PORT` is not set, it will run at port 3000.
 
 ### Client side
 
-Run `grunt build` and grab a distribution-ready version from the "dist" folder.
+Run `grunt build` and grab a distribution-ready version from the `dist` folder.
 
 ## Testing (client side only)
 
