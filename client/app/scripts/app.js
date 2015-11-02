@@ -21,8 +21,8 @@ angular
     'friendsFeedApp.directives'
   ])
   .constant("AppConfig", {
-    "api_url": "http://localhost:3000",
-    "image_server_url": "http://localhost:3000"
+    "api_url": "http://friends-feed-api.natabarbosa.com",
+    "image_server_url": "http://friends-feed-api.natabarbosa.com"
   })
   .config(function($routeProvider) {
     $routeProvider

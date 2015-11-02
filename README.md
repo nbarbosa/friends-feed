@@ -1,6 +1,11 @@
 # friends-feed
 
-A project with AngularJS + Node.js + MongoDB + Karma that mimics a friendship-based news feed (i.e. friends can see their friends' posts and their own).
+A project with AngularJS + Node.js + MongoDB + Karma that mimics a friendship-based news feed (i.e. friends can see their friends' posts and their own). Here's how it works:
+
+1. Pick one of the users to enter
+1. See updates (posts) from friends
+1. Post a new update
+1. Refresh the page to be able to enter as another user
 
 ## Install dependencies
 
@@ -18,8 +23,8 @@ Run `npm install`.
 
 Make sure to properly set the constants that will point to the server side app in `app.js`:
 
-* AppConfig.api_url
-* AppConfig.image_server_url
+* AppConfig.api_url - By default, it will be pointing to a deployed app online.
+* AppConfig.image_server_url - By default, it will be pointing to a deployed app online.
 
 Run `grunt` for building and `grunt serve` for preview.
 
@@ -33,6 +38,8 @@ Make sure to run the seed script `seed.js` by running `node seed.js`. This will 
 * Jessica is friends with John
 * Peter is friends with John
 * Note that Jessica is not friends with Peter
+
+The seed script will create no posts.
 
 Run `npm start`
 
