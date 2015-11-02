@@ -47,6 +47,24 @@ Run `npm start`
 
 If environment variable `PORT` is not set, it will run at port 3000.
 
+#### Endpoints
+Assume `1` for the user ID in the examples below:
+
+##### Add a new post
+    POST /posts
+    Content-Type: application/json
+
+    { userId: 1, content: 'This is a new post' }
+
+##### Get posts (from friends and self)
+    GET /posts?userId=1
+
+##### Get all users
+    GET /users HTTP/1.1
+
+##### Get a user's profile (including friends)
+    GET /users?userId=1
+
 ## Distribute (client side only)
 
 ### Client side
