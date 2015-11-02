@@ -8,7 +8,7 @@
  * Controller of the friendsFeedApp
  */
 angular.module('friendsFeedApp')
-  .controller('MainCtrl', function($scope, UserService, PostService) {
+  .controller('MainCtrl', function($scope, UserService, PostService, $timeout) {
 
     // read all users for initial choice
     UserService.all().then(function(users) {
@@ -31,12 +31,22 @@ angular.module('friendsFeedApp')
 
       if (typeof $scope.user !== 'undefined') {
 
+        $scope.getPosts = function () {
+           PostService.all($scope.user._id).then(function(posts) {
+              $scope.posts = posts;
+            }, function(err) {
+              console.log(err);
+            });
+        };
+
         // load posts from friends and from myself
-        PostService.all($scope.user._id).then(function(posts) {
-          $scope.posts = posts;
-        }, function(err) {
-          console.log(err);
-        });
+        $scope.getPosts();
+
+        // poll server for new updates every 5 seconds
+        (function tick() {
+            $scope.getPosts();
+            $timeout(tick, 5 * 1000);
+        })();
 
         $scope.resetPost = function() {
           $scope.post = {
