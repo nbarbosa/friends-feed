@@ -60,7 +60,7 @@ Assume `1` for the user ID in the examples below:
     GET /posts?userId=1
 
 ##### Get all users
-    GET /users HTTP/1.1
+    GET /users
 
 ##### Get a user's profile (including friends)
     GET /users?userId=1
