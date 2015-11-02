@@ -30,6 +30,8 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ### Server side
 
+For your convenience, there is a deployed app online in case you don't want to set up the server application on your machine. The client app points to it by default.
+
 Make sure to properly set the MongoDB connection URI `MONGO_URI` as an environment variable. The dotenv plug-in allows setting this through the `.env` file.
 
 Make sure to run the seed script `seed.js` by running `node seed.js`. This will create 3 users with the following relationships:
