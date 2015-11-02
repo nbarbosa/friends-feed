@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2><i class="fa fa-newspaper-o fa-2x"></i> News feed</h2>
+</div>
+<div class="row" ng-repeat="post in posts | orderBy:'-createdOn'">
+  <post post="post"></post>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="well text-center" ng-show="posts.length == 0">
+      <p>Nothing to see here yet. Your friends are too boring, and so are you.</p>
+    </div>
+  </div>
+</div>

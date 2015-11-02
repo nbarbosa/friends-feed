@@ -1,0 +1,7 @@
+<div class="panel panel-default text-center" ng-click="select(user)">
+  <div class="panel-body">
+    <img class="img-circle img-responsive center-block" ng-src="{{imageServer + user.photo.url}}" />
+    <h4>{{user.name.first}} {{user.name.last}}</h4>
+    <span ng-show="complete">{{user.email}}</span>
+  </div>
+</div>

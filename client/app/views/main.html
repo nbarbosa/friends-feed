@@ -1,0 +1,45 @@
+<!-- Initial user select -->
+<div class="jumbotron" ng-show="!user">
+  <div class="page-header">
+    <h2>Who do you want to be?</h2>
+  </div>
+  <user-list users="users" user-select-fn="pickUser(user)"></user-list>
+</div>
+<!-- end user select -->
+
+<!-- main container after user is selected -->
+<div class="row" ng-show="user">
+
+  <!-- User info + new post form -->
+  <div class="col-sm-9">
+    <div class="text-center">
+      <user user="user" complete="true"></user>
+    </div>
+
+    <div class="well">
+      <div class="form-group">
+        <textarea class="form-control" rows="3" ng-model="post.content" placeholder="What do you want to share?"></textarea>
+      </div>
+      <button class="btn btn-success btn-lg" ng-click="addPost()">Share</button>
+    </div>
+
+    <feed posts="posts"></feed>
+
+  </div>
+  <!-- END User info + new post form -->
+
+  <!-- List of friends -->
+  <div class="col-sm-3">
+
+    <div class="panel">
+      <div class="panel-heading"><h3>My Friends</h3></div>
+      <div class="panel-body">
+
+        <user-list users="user.friends"></user-list>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- END List of friends -->
+</div>
